@@ -1,0 +1,31 @@
+{
+  "name"        : "grpcwebui-extension",
+  "description" : "Расширение для более удобной работы с grpc-web-ui",
+  "version"     : "0.1",
+  "manifest_version" : 2,
+  "icons" : {
+    "16"  : "assets/images/logo-128.png",
+    "48"  : "assets/images/logo-128.png",
+    "128" : "assets/images/logo-128.png"
+  },
+  "content_scripts" : [{
+    "matches" : [
+        "http://*/*",
+        "https://*/*",
+        "file://*/*"
+      ],
+    "css"     : ["src/css/main.css", "src/css/jquery.json-viewer.css"],
+    "js"      : ["src/js/lib/jquery-3.7.1.min.js", "src/js/lib/jquery.json-viewer.js", "src/js/contentscript.js"]
+  }],
+  "background": {
+    "page": "src/html/background.html"
+  },
+  "options_page": "src/html/options.html",
+  "permissions": [
+    "storage",
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "homepage_url": "https://github.com/victorivanovspb"
+}
