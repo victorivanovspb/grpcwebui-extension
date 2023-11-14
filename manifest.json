@@ -1,7 +1,7 @@
 {
   "name"        : "grpcwebui-extension",
   "description" : "Расширение для более удобной работы с grpc-web-ui",
-  "version"     : "0.2-beta",
+  "version"     : "0.2",
   "manifest_version" : 2,
   "icons" : {
     "16"  : "assets/images/logo-128.png",
