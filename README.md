@@ -1,4 +1,5 @@
 # grpcwebui-extension
+Небольшое расширение для Chrome, надстраивающее UI у приложения grpc-web-ui.
 
 ![request form](assets/images/screenshot-request-form.png "Request form screenshot")
 
