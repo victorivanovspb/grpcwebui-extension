@@ -11,6 +11,8 @@
 6. PROFIT
 
 ## Что нужно улучшить
+* Common:
+  * Поддержать 3-ю версию манифеста (manifest.json).
 * Шапка:
   * рядом с Service name и Method name добавить возможность выбирать Namespace и Service в нем (слева) и указывать окружение dev/test/prod (справа).
 * Request Form:
