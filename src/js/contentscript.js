@@ -231,7 +231,7 @@ $(document).ready(function() {
 					<div>
 						<textarea id='${ID_GRPC_RESP_TAB_FULLSCREEN}'></textarea>
 						<div class='txt-menu-bar txt-menu-bar-mrgn-clps60'>
-							<div id='${ID_GRPC_RESP_BTN_CLOSE}'>{collapse}</div>
+							<div id='${ID_GRPC_RESP_BTN_CLOSE}'>collapse</div>
 						</div>
 					</div>
 				</div>`
