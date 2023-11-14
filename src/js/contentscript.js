@@ -98,8 +98,6 @@ function validatejson(data) {
 $(document).ready(function() {
 	var url = window.location.href;
 	var checked = destinations.find((dest) => url.includes(dest));
-	
-	console.log('checked=', checked);
 
 	if (checked) {
 		$('body').ready(function(){
@@ -193,13 +191,9 @@ $(document).ready(function() {
 		// raw req: expand block (pretty json)
 		$(`div#${ID_GRPC_REQ_RAW_BTN_EXP_PRETTY}`)
 			.on('click', function(e) {
-				/*syncTextarea(
-					ID_REQ_RAW_TXT_BASE,
-					ID_REQ_RAW_TXT_FULL
-				);*/
 				var data = $(`textarea#${ID_REQ_RAW_TXT_BASE}`).val();
 				var json = JSON.parse(data);
-				console.log(json);
+
 				$(`#json-renderer1`).jsonViewer(json);
 				enableBlock(ID_REQ_RAW_BLOCK_PRETTY);
 			});
@@ -293,7 +287,7 @@ $(document).ready(function() {
 			.on('click', function(e) {
 				var data = $(`textarea.${ID_GRPC_RESP_TEXT}`).val();
 				var json = JSON.parse(data);
-				//console.log(json);
+
 				$(`#json-renderer`).jsonViewer(json);
 				enableBlock(ID_GRPC_RESP_BLOCK_PRETTY);
 			});
