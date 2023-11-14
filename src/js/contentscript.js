@@ -1,8 +1,8 @@
 var destinations = [
-	"https://grpcui-proxy.ingress.dev.m2.ru/",
-	"https://grpcui-proxy.ingress.test.m2.ru/",
-	"https://grpcui-proxy.ingress.stage.m2.ru/",
-	"https://grpcui-proxy.ingress.prod.m2.ru/"
+	"grpcui-proxy.ingress.dev.",
+	"grpcui-proxy.ingress.test.",
+	"grpcui-proxy.ingress.stage.",
+	"grpcui-proxy.ingress.prod."
 ];
 
 var ID_GRPC_REQ_RAW_TAB = 'grpc-request-raw-tab';
