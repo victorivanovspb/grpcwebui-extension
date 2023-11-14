@@ -20,12 +20,11 @@
   "background": {
     "page": "src/html/background.html"
   },
-  "options_page": "src/html/options.html",
   "permissions": [
     "storage",
     "tabs",
     "http://*/*",
     "https://*/*"
   ],
-  "homepage_url": "https://github.com/victorivanovspb"
+  "homepage_url": "https://github.com/victorivanovspb/grpcwebui-extension"
 }
