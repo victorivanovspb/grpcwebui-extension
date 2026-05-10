@@ -95,6 +95,51 @@ function validatejson(data) {
 	}
 }
 
+function addAuth(config) {
+	$('#grpc-method-select').after(`
+		<div class="grpc-desc" id="grpc-user-select">
+			<span class="grpc-form-label">User:</span>
+			<select name="user" id="gprc-request-user">
+				<option value="anon">Anon</option>
+			</select>
+		</div>
+	`);
+	$.each(config.users, function (i, user) {
+		$('#gprc-request-user').append($('<option>', {
+			value: user.username,
+			text: user.username
+		}));
+	});
+
+	$('.grpc-invoke').after(`
+		<button class="grpc-invoke-override">Invoke</button>
+	`);
+	$('.grpc-invoke').hide();
+	$('.grpc-invoke-override').click(function (event) {
+		var username = $('#gprc-request-user').val();
+		if (username != "anon") {
+			var users = $.grep(config.users, function (user, i) {
+				return user.username == username;
+			});
+			$.ajax(
+				{
+					type: "POST",
+					url: config.url,
+					contentType: "application/json",
+					data: JSON.stringify(users[0])
+				}
+			).done(function (response) {
+				$('.metadataRow:first input:nth(0)').val("Authorization");
+				$('.metadataRow:first input:nth(1)').val(response.header);
+				$(event.target).parent().children('.grpc-invoke').trigger('click');
+			});
+		} else {
+			$('.metadataRow:first input').val("");
+			$(event.target).parent().children('.grpc-invoke').trigger('click');
+		}
+	});
+}
+
 $(document).ready(function() {
 	var url = window.location.href;
 	var checked = destinations.find((dest) => url.includes(dest));
@@ -297,5 +342,13 @@ $(document).ready(function() {
 			.on('click', function(e) {
 				disableBlock(ID_GRPC_RESP_BLOCK_PRETTY);
 			});
+
+		// auth
+		$.each(authConfig, function (domain, config) {
+			if (window.location.href.includes(domain)) {
+				addAuth(config);
+				return false;
+			}
+		});
 	}
 });

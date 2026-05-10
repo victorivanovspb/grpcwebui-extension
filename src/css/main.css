@@ -39,7 +39,8 @@ select#grpc-sevice {
 	margin-left: 0 !important;
 }
 #grpc-form #grpc-request-tab button.grpc-invoke, 
-#grpc-form #grpc-request-response button.grpc-invoke {
+#grpc-form #grpc-request-response button.grpc-invoke,
+#grpc-form #grpc-request-response button.grpc-invoke-override {
 	position: sticky !important;
 	bottom: 0 !important;
 	left: 0 !important;

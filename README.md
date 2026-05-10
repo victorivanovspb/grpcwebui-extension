@@ -22,7 +22,7 @@
 
 ## Что нужно ещё улучшить (Whishlist)
 * Common:  
-  * [ ] 1.1. Поддержать 3-ю версию манифеста (manifest.json).
+  * [x] ~~1.1. Поддержать 3-ю версию манифеста (manifest.json).~~
 * Шапка:
   * [ ] 2.1. Рядом с Service name и Method name добавить возможность выбирать Namespace и Service в нем (слева) и указывать окружение dev/test/prod (справа).
 * Request Form:
